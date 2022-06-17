@@ -2,11 +2,22 @@
 {% load crispy_forms_tags %}
 
 {% block app %}
-    <div class="row">
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#menu1">View Employee</a></li>
+    <li ><a  href="{% url 'details_employee'%}"> Back To Manage Employee</a></li>
+   
+</ul>
+ <div class="tab-content ">
+    
+    <div id="menu1" class="tab-pane show">
+    <h5 class="ml-4 text-success">Personal Details </h5>
+
+          <div class="row">
         <div class="col">
-            <div class="card h-100 text-center">
-            <a href="{% url 'details_employee'%}"> Back To Manage Employee</a>
+            <div class="card h-100 text-center border-0">
                 <div class="card-body">
+                    
                     <div class="form-row">
                         <div class="form-group col-3">
                             {{ form.employee_first_name|as_crispy_field }}
@@ -44,13 +55,14 @@
                         <div class="form-group col-3">
                             {{ form.blood_group|as_crispy_field }}
                         </div>
-                       
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
+    </div>
+</div>
 
 {% endblock app %}
