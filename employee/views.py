@@ -29,8 +29,6 @@ class AddEmployee(TemplateView):  # It contains all the logic to Add an Employee
         }
         return render(request,'employee/add_employee.html',context)
     def post(self,request):
-        import pdb
-        pdb.set_trace()
         request.POST._mutable = True
         user = User.objects.first()
         request.POST['user'] = user.id
